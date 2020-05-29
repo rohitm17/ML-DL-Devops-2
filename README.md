@@ -1,4 +1,4 @@
-# Integration_of_CNN_with_DevOps-MLOps_Training (given by Mr. Vimal Daga sir)
+# Integration_of_CNN_with_DevOps
 
 ## Work Description :
 
@@ -28,7 +28,7 @@
    * Just see the below mentioned picture. Here I create one Dockerfile and run the build command. Remember one thing you have to run this command particularly on that folder where you **Dockerfile** exits.
    * Here is the link of Dockerfile :https://github.com/raktim00/Integration_of_CNN_with_DevOps-MLOps_Training/blob/master/Dockerfile 
    
-   ![Dockerfile](Screenshots/Dockerfile.png)
+   ![Dockerfile](Dockerfile.png)
 
 ### 3. Giving power to Jenkins user in RHEL8 :
    * I had already mentioned in my previous project of Jenkins that how we give jenkins user all the power of linux. It's needed to run Docker using Jenkins. Here is the link where you can find that : https://github.com/raktim00/DevOps_Home_Work
@@ -36,26 +36,26 @@
 ### 4. At first email configuration in Jenkins :
    * Go to **Manage Jenkins** then **Configuration** and then scroll drown to bottom of the page and if your **email extension** is installed properly then you will find this option mentioned in below picture. Follow the picture and Configure Email in Jenkins to get email notification from Jenkins.
    
-   ![Email_config](Screenshots/Email_Config.png)
+   ![Email_config](Email_Config.png)
    
 ### 5. Building Job1 in Jenkins :
    * If your **GitHub extension** is installed properly then you will be able to put you github repo address in SCM portion of Job1 configuration. For reference follow the below picture.
    
-   ![Job1_1](Screenshots/Job1_1.png)
+   ![Job1_1](Job1_1.png)
    
    * Next thing you have to copy the downloaded codes to your working space. For that in execute shell just write the respective code. For reference follow the below picture.
    
-   ![Job1_2](Screenshots/Job1_2.png)
+   ![Job1_2](Job1_2.png)
    
 ### 6. Building Job2 in Jenkins :
    * Now we have to start the CNN required libraries installed container. Also one more thing in **Build Trigger** option just select **Build after other projects are build** and give **Job1**. Now what will happen as soon as your Job1 complete it will automatically start the job2. For reference follow the below picture.
    
-   ![Job2](Screenshots/Job2.png)
+   ![Job2](Job2.png)
    
 ### 7. Building Job3 in Jenkins :
    * Now we have to check our accuracy. For that we have job3. Here if accuracy satisfies our need then It will trigger Job4 and if accuracy don't satisfy it will again start training the model with different architecture, also if will trigger Job4 after each build. For reference follow the below picture.
    
-   ![Job3](Screenshots/Job3.png)
+   ![Job3](Job3.png)
    
 ### 8. Building Job4 in Jenkins :
    * Here again the build will check the accuracy. If accuracy satisfies then it will execute the shell, otherwise it gonna fail the shell execution. For reference follow the below picture.
@@ -73,52 +73,45 @@
 ### 9. Building Job5 in Jenkins :
    * It's the last job. Here you have select that after **Job2** it will be triggered and as Poll SCM is configured it will keep on building it self in each minute. For reference follow the below picture.
    
-   ![Job5_1](Screenshots/Job5_1.png)
+   ![Job5_1](Job5_1.png)
    
    * This Job keeps on checking if our container is running or not. Due to any reason if container failed then it will again start that. For reference follow the below picture.
    
-   ![Job5_2](Screenshots/Job5_2.png)
+   ![Job5_2](Job5_2.png)
 
 ### 10. Last work to create build pipeline :
    * Now lastly you have to create one **view** in Jenkins that is build pipeline. But remember you should have **build pipeline** extension installed in your Jenkins. And after creating build pipeline you will see this kind of visual like as mentioned in below picture.
    
-   ![Build_pipeline](Screenshots/Build_Pipeline.png)
+   ![Build_pipeline](Build_Pipeline.png)
    
 ## Great,everything is done. Now let's see what kinds of outputs we will get.
   #### Don't forget to build the Jenkins Architecture from Build Pipeline.
   
 ### 1. Job1 output observation :
    * Here you will see that it fetches the code from github and deployed to your workspace.
-   ![Job1_output](Screenshots/Job1_op.png)
+   ![Job1_output](Job1_op.png)
    
 ### 2. Job2 output observation :
    * Here you will see that it at first checks if the code is CNN or not. Then it started the container.
    
-   ![Job2_output_1](Screenshots/Job2_op.png)
+   ![Job2_output_1](Job2_op.png)
    
    * Also in this output you will fine one extra thing that what random architecture of CNN layers it takes.
    
-   ![Job2_output_2](Screenshots/Job2_op_2.png)
+   ![Job2_output_2](Job2_op_2.png)
    
 ### 3. Job3 output observation :
    * You will see when ever it get the accuracy of it's satisfaction then it will start building job4. Also remember if it don't find the accuracy then it will again trigger it self and start to build the model.
    
-   ![Job3_output](Screenshots/Job3_op.png)
+   ![Job3_output](Job3_op.png)
    
 ### 4. Job4 output observation :
    * Here you will see when the Job4 gets the desired accuracy it send the email to the developer.
    
-   ![Job4_output](Screenshots/Job4_op.png)
+   ![Job4_output](Job4_op.png)
    
 ### 5. Job5 output observation :
    * Here you will see that it keeps on checking if the cnn container is running or not, if somehow the container fails then it will again start that.
    
-   ![Job5_output](Screenshots/Job5_op.png)
+   ![Job5_output](Job5_op.png)
    
-## Future Possibilities :
-   * 1st of all, these kinds of model building takes lots of CPU and RAM, that's why it's always better to practice these things in Cloud Computing.
-   * 2nd, we can make this work more robust using Kubernetes with Jenkins.
-   * 3rd, For CNN code rather that using random function we can make it more intelligent in which it will automatically adds layers based on previous results.
-   
-### Lastly thank you so much Vimal Daga Sir, for teaching something extraordinary.
-#### One big thank you to my friend Hemant Sharma, cause he helps me to learn some new things that I applied in this project.
