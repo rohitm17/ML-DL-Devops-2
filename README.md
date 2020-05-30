@@ -60,15 +60,15 @@
 ### 8. Building Job4 in Jenkins :
    * Here again the build will check the accuracy. If accuracy satisfies then it will execute the shell, otherwise it gonna fail the shell execution. For reference follow the below picture.
    
-   ![Job4_1](Screenshots/Job4_1.png)
+   ![Job4_1](Job4_1.png)
    
    * Now we have to configure email in Job4. Whenever the build gets successful it will send the success message to the developer. For reference follow the below picture.
    
-   ![Job4_email_1](Screenshots/Job4_email_1.png)
+   ![Job4_email_1](Job4_email_1.png)
    
-   ![Job4_email_2](Screenshots/Job4_email_2.png)
+   ![Job4_email_2](Job4_email_2.png)
    
-   ![Job4_email_3](Screenshots/Job4_email_3.png)
+   ![Job4_email_3](Job4_email_3.png)
 
 ### 9. Building Job5 in Jenkins :
    * It's the last job. Here you have select that after **Job2** it will be triggered and as Poll SCM is configured it will keep on building it self in each minute. For reference follow the below picture.
